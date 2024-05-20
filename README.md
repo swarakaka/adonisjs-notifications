@@ -261,14 +261,15 @@ await user.markNotificationsAsRead()
 You may want to deliver notifications using other channels, for that, you can use any class that implements the `NotificationChannelContract`
 
 ```typescript
+// channels/sms.ts
 import { NotifiableModel, NotificationChannelContract } from '@osenco/adonisjs-notifications/types'
 
-interface SmsChannelContract {
+interface SmsPayload {
   text: string
 }
 
-export class SmsChannelContract implements NotificationChannelContract {
-  async send(data: SmsChannelContract, to: NotifiableModel) {
+export class SmsChannel implements NotificationChannelContract {
+  async send(data: SmsPayload, to: NotifiableModel) {
     // Implement API call to send
   }
 }
@@ -278,6 +279,9 @@ After the channel is created, you must register the channel in the notification 
 
 ```typescript
 // config/notification.ts
+
+import { SmsChannelContract } from '../app/channels/sms.js' // or "#channels/sms"
+
 const notificationConfig = defineConfig({
   channels: {
     ...

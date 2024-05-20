@@ -1,0 +1,17 @@
+{{#var modelImportPath = generators.importPath('#models', model.path, modelFileName)}}
+{{{
+  exports({
+    to: app.makePath(app.rcFile.directories['channels'], channelFileName)
+  })
+}}}
+import { NotifiableModel, NotificationChannelContract } from '@osenco/adonisjs-notifications/types'
+
+interface {{ channelName }}Payload {
+  // e.g text: string
+}
+
+export default class {{ channelName }} implements NotificationContract<{{ modelName }}> {
+  async send(data: {{ channelName }}Payload, notifiable: {{ modelName }}) {
+    // Implement API call to send
+  }
+}
