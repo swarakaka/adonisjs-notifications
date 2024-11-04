@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/osenco/adonisjs-notifications/raw/main/.github/banner.png" width="1200px">
+  <img src="https://github.com/swarakaka/adonisjs-notifications/raw/main/.github/banner.png" width="1200px">
 </div>
 
 
@@ -11,7 +11,7 @@
 Based on the good work of [verful/adonis-notifications](https://github.com/verful/adonis-notifications)
 
 ## **Pre-requisites**
-The `@osenco/adonisjs-notifications` package requires `@adonisjs/core >= 6.2.0`
+The `@swarakaka/adonisjs-notifications` package requires `@adonisjs/core >= 6.2.0`
 
 Also, it relies on `@adonisjs/lucid >= 20.5.1` for database notifications and on `@adonisjs/mail >= 9.2.1` for mail notifications.
 
@@ -20,17 +20,17 @@ Also, it relies on `@adonisjs/lucid >= 20.5.1` for database notifications and on
 Install the package from the npm registry as follows.
 
 ```bash
-npm i @osenco/adonisjs-notifications
+npm i @swarakaka/adonisjs-notifications
 # or
-yarn add @osenco/adonisjs-notifications
+yarn add @swarakaka/adonisjs-notifications
 # or
-bun add @osenco/adonisjs-notifications
+bun add @swarakaka/adonisjs-notifications
 ```
 
 Next, configure the package by running the following ace command.
 
 ```bash
-node ace configure @osenco/adonisjs-notifications
+node ace configure @swarakaka/adonisjs-notifications
 ```
 
 And then add the path to the `tsconfig.json`
@@ -80,7 +80,7 @@ First, apply the mixin on the model you are wanting to notify.
 ```typescript
 import { BaseModel } from '@adonisjs/lucid/orm'
 import { compose } from '@adonisjs/core/helpers'
-import Notifiable from '@osenco/adonisjs-notifications/mixins/notifiable'
+import Notifiable from '@swarakaka/adonisjs-notifications/mixins/notifiable'
 
 // Notifiable takes the notification table name as it's only param 
 export default class User extends compose(BaseModel, Notifiable('notifications')){
@@ -103,7 +103,7 @@ user.notifyLater(new TestNotification())
 You can also use the `Notification` module to send notifications. Sending notifications this way is useful when you need to send a notification to multiple notifiables, like a array of users.
 
 ```typescript
-import notification from '@osenco/adonisjs-notifications/services/main'
+import notification from '@swarakaka/adonisjs-notifications/services/main'
 import { TestNotification } from '#/notifiacations/test_notification.js'
 
 
@@ -113,7 +113,7 @@ notification.send(users, new TestNotification())
 You can also delay notifications using the `sendLater` method. This method uses a in-memory queue to send the notifications.
 
 ```typescript
-import notification from '@osenco/adonisjs-notifications/services/main'
+import notification from '@swarakaka/adonisjs-notifications/services/main'
 import { TestNotification } from '#/notifiacations/test_notification.js'
 
 Notification.sendLater(users, new TestNotification())
@@ -203,7 +203,7 @@ In the notification config file the `DatabaseChannelData` Interface can be defin
 
 ```typescript
 // config/notification.ts
-declare module '@osenco/adonisjs-notifications/types' {
+declare module '@swarakaka/adonisjs-notifications/types' {
   interface DatabaseChannelData {
     title: string
   }
@@ -262,7 +262,7 @@ You may want to deliver notifications using other channels, for that, you can us
 
 ```typescript
 // channels/sms.ts
-import { NotifiableModel, NotificationChannelContract } from '@osenco/adonisjs-notifications/types'
+import { NotifiableModel, NotificationChannelContract } from '@swarakaka/adonisjs-notifications/types'
 
 interface SmsPayload {
   text: string

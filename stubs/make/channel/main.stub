@@ -4,7 +4,7 @@
     to: app.makePath(app.rcFile.directories['channels'], channelFileName)
   })
 }}}
-import { NotifiableModel, NotificationChannelContract } from '@osenco/adonisjs-notifications/types'
+import { NotifiableModel, NotificationChannelContract } from '@swarakaka/adonisjs-notifications/types'
 
 interface {{ channelName }}Payload {
   // e.g text: string

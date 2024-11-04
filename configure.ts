@@ -66,8 +66,8 @@ export async function configure(command: Configure) {
    * Publish provider and command
    */
   await codemods.updateRcFile((rcFile) => {
-    rcFile.addProvider('@osenco/adonisjs-notifications/notification_provider')
-    rcFile.addCommand('@osenco/adonisjs-notifications/commands')
+    rcFile.addProvider('@swarakaka/adonisjs-notifications/notification_provider')
+    rcFile.addCommand('@swarakaka/adonisjs-notifications/commands')
     rcFile.setDirectory('notifications', 'app/notifications')
   })
 }
