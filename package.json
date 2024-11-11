@@ -1,7 +1,7 @@
 {
   "name": "@swarakaka/adonisjs-notifications",
   "description": "The easiest way to send notifications in AdonisJS",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -83,7 +83,7 @@
   },
   "peerDependencies": {
     "@adonisjs/core": "^6.9.0",
-    "@adonisjs/lucid": "^20.6.0",
+    "@adonisjs/lucid": "^21.3.0",
     "@adonisjs/mail": "^9.2.1"
   },
   "peerDependenciesMeta": {
@@ -100,9 +100,6 @@
     "extends": "@adonisjs/eslint-config/package"
   },
   "prettier": "@adonisjs/prettier-config",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "np": {
     "message": "chore(release): %s",
     "tag": "latest",
